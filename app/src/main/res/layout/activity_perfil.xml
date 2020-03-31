@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/azulclaro"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Perfil">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/perfil"
+        android:layout_margin="30dp"
+        android:textColor="@color/negro"
+        android:textAlignment="center"
+        android:background="@drawable/marco2"
+        android:textSize="72dp"/>
+
+    <ImageView
+        android:id="@+id/foto"
+        android:layout_width="200dp"
+        android:background="@color/blanco"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_person_black"/>
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:textColor="@color/azuloscuro"
+        android:textAlignment="center"
+        android:text="NOMBRE APELLIDO"
+        android:textSize="50dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_Acceder2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/boton"
+            android:layout_marginTop="40dp"
+            android:paddingHorizontal="50dp"
+            android:background="@drawable/marco"
+            android:textSize="35dp" />
+    </LinearLayout>
+</LinearLayout>
