@@ -152,13 +152,15 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_Acceder2"
+            android:id="@+id/btn_Acceder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/boton"
-            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginBottom="40dp"
+            android:paddingVertical="10dp"
             android:paddingHorizontal="50dp"
             android:background="@drawable/marco"
-            android:textSize="30dp" />
+            android:textSize="45dp" />
     </LinearLayout>
 </LinearLayout>

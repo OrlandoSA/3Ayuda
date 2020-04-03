@@ -5,7 +5,7 @@
     <string name="pass">Contraseña</string>
     <string name="conf">Confirmar</string>
     <string name="age">Edad</string>
-    <string name="phone">Telefono</string>
+    <string name="phone">Teléfono</string>
     <string name="perfil">PERFIL</string>
     <string name="personal">Personal de Servicio</string>
 </resources>
