@@ -34,7 +34,7 @@
         android:layout_marginHorizontal="30dp"
         android:textColor="@color/azuloscuro"
         android:textAlignment="center"
-        android:text="SARA SANCHEZ MENDIVIL"
+        android:text="SARA SANCHEZ"
         android:textSize="40dp"/>
 
     <LinearLayout
