@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/azulclaro"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="@color/azulclaro"
+    android:fillViewport="true"
     tools:context=".PerfilActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/perfil"
-        android:layout_margin="30dp"
-        android:textColor="@color/negro"
-        android:textAlignment="center"
-        android:fontFamily="sans-serif-light"
-        android:background="@drawable/marco3"
-        android:textSize="60dp"/>
-
-    <ImageView
-        android:id="@+id/foto"
-        android:layout_width="200dp"
-        android:background="@color/blanco"
-        android:layout_height="200dp"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_person_black"/>
-
-    <TextView
-        android:id="@+id/nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginHorizontal="30dp"
-        android:textColor="@color/azuloscuro"
-        android:textAlignment="center"
-        android:text="SARA SANCHEZ"
-        android:textSize="40dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="bottom"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_AccederPerfil"
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/boton"
-            android:layout_gravity="center_horizontal"
+            android:layout_margin="30dp"
+            android:background="@drawable/marco3"
             android:fontFamily="sans-serif-light"
-            android:layout_marginBottom="40dp"
-            android:paddingVertical="10dp"
-            android:paddingHorizontal="50dp"
-            android:background="@drawable/marco"
-            android:textSize="45dp" />
+            android:text="@string/perfil"
+            android:textAlignment="center"
+            android:textColor="@color/negro"
+            android:textSize="60dp" />
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@color/blanco"
+            android:src="@drawable/ic_person_black" />
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="50dp"
+            android:text="SARA SANCHEZ"
+            android:textAlignment="center"
+            android:textColor="@color/azuloscuro"
+            android:textSize="40dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_AccederPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/marco"
+                android:fontFamily="sans-serif-light"
+                android:paddingHorizontal="50dp"
+                android:paddingVertical="10dp"
+                android:text="@string/boton"
+                android:textSize="45dp" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>
