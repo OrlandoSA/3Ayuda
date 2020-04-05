@@ -1,36 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:orientation="horizontal">
+
     <ImageView
-        android:id="@+id/foto"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ic_person_black"
-        android:background="@drawable/marcoimagen"/>
+        android:id="@+id/iv_imagen"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/marcoimagen"
+        android:src="@drawable/ic_person_black" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
         android:orientation="vertical">
-    <TextView
-        android:id="@+id/nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nombre Apellido"
-        android:padding="10dp"
-        android:textColor="@color/negro"
-        android:layout_marginTop="15dp"
-        android:textSize="28dp"/>
-    <TextView
-        android:id="@+id/edad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Edad"
-        android:padding="10dp"
-        android:textColor="@color/negro"
 
-        android:textSize="28dp"/>
+        <TextView
+            android:id="@+id/tv_Nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre Apellido"
+            android:textColor="@color/negro"
+            android:textSize="19dp" />
+
+        <TextView
+            android:id="@+id/tv_Edad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edad"
+            android:textColor="@color/negro"
+            android:textSize="19dp" />
+
+        <TextView
+            android:id="@+id/tv_Servicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Servicio"
+            android:textColor="@color/negro"
+            android:textSize="19dp" />
     </LinearLayout>
 </LinearLayout>

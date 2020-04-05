@@ -3,7 +3,7 @@ package Ayuda.a3ayuda
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class Menu : AppCompatActivity() {
+class MenuActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

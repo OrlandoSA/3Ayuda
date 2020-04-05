@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListaPersonal"></activity>
-        <activity android:name=".Perfil" />
-        <activity android:name=".Registro" />
-        <activity android:name=".Menu" />
+        <activity android:name=".PerfilPersonalActivity"></activity>
+        <activity android:name=".BienvenidaActivity" />
+        <activity android:name=".ListaPersonalActivity" />
+        <activity android:name=".PerfilActivity" />
+        <activity android:name=".RegistroActivity" />
+        <activity android:name=".MenuActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
