@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/iv_imagen"
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="38dp"
+        app:cardElevation="0dp"
         android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@drawable/marcoimagen"
-        android:src="@drawable/ic_person_black" />
-
+        android:layout_height="80dp">
+        <ImageView
+            android:id="@+id/iv_imagen"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/ic_person_black"/>
+    </androidx.cardview.widget.CardView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

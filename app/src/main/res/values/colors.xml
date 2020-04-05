@@ -10,4 +10,5 @@
     <color name="azulsombra">#9cbf9e</color>
     <color name="azuloscuro">#0000aa</color>
     <color name="negro">#000</color>
+    <color name="cancelar">#ec2124</color>
 </resources>

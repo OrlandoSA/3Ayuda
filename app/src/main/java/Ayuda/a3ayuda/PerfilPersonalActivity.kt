@@ -23,5 +23,10 @@ class PerfilPersonalActivity : AppCompatActivity() {
             var intent = Intent(this, UbicacionActivity::class.java)
             startActivity(intent)
         }
+
+        btn_Cancelar.setOnClickListener {
+            var intent = Intent(this, ListaPersonalActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -3,19 +3,20 @@ package Ayuda.a3ayuda
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_ubicacion.*
+import kotlinx.android.synthetic.main.activity_sugerencias.*
 
-class UbicacionActivity : AppCompatActivity() {
+class SugerenciasActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ubicacion)
+        setContentView(R.layout.activity_sugerencias)
 
-        btn_Acceder.setOnClickListener {
+        btn_Enviar.setOnClickListener {
             var intent = Intent(this, MensajeActivity::class.java)
-            intent.putExtra("mensaje","UBICACIÓN ENVIADA")
-            intent.putExtra("siguiente", Constantes.VENTANA_BUZON_SUGERENCIAS)
+            intent.putExtra("mensaje","MENSAJE ENVIADO")
+            intent.putExtra("siguiente", Constantes.VENTANA_LISTA_PERSONAL)
             startActivity(intent)
         }
+
     }
 }

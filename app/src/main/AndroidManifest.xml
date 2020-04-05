@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UbicacionActivity"></activity>
+        <activity android:name=".SugerenciasActivity"></activity>
+        <activity android:name=".MensajeActivity" />
+        <activity android:name=".UbicacionActivity" />
         <activity android:name=".PerfilPersonalActivity" />
         <activity android:name=".BienvenidaActivity" />
         <activity android:name=".ListaPersonalActivity" />

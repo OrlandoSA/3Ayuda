@@ -13,4 +13,7 @@
     <string name="calle_hint"><font size="24">Calle</font></string>
     <string name="casa_hint"><font size="24"># Casa</font></string>
     <string name="ubicacion">UBICACIÓN</string>
+    <string name="aceptar">ACEPTAR</string>
+    <string name="buzon">BUZÓN SUGERENCIAS</string>
+    <string name="enviar">ENVIAR</string>
 </resources>

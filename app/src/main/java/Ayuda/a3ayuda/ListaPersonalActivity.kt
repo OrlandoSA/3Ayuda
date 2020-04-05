@@ -24,12 +24,12 @@ class ListaPersonalActivity : AppCompatActivity() {
     }
 
     fun cargarPersonal(){
-        listaPersonal.add(Personal("Jesús","Flores",34,"Cuidados",R.drawable.ic_person_black,"6444637485"))
-        listaPersonal.add(Personal("Celina","Acosta",42,"Pintura",R.drawable.ic_person_black,"6442857496"))
-        listaPersonal.add(Personal("Salvador","Villanueva",26,"Fontanero",R.drawable.ic_person_black,"6441748596"))
-        listaPersonal.add(Personal("Alfredo","Pérez",41,"Arreglos generales",R.drawable.ic_person_black,"6441235478"))
-        listaPersonal.add(Personal("Rosalía","López",50,"Empleada domestica",R.drawable.ic_person_black,"6441238574"))
-        listaPersonal.add(Personal("Rocío","Santos",29,"Electricista",R.drawable.ic_person_black,"6441189652"))
+        listaPersonal.add(Personal("Hitomi","Flores",34,"Cuidados",R.drawable.personal3,"6444637485"))
+        listaPersonal.add(Personal("Celina","Acosta",42,"Pintura",R.drawable.personal6,"6442857496"))
+        listaPersonal.add(Personal("Salvador","Villanueva",26,"Fontanero",R.drawable.personal2,"6441748596"))
+        listaPersonal.add(Personal("Alfredo","Pérez",41,"Arreglos generales",R.drawable.personal4,"6441235478"))
+        listaPersonal.add(Personal("Rosalía","López",50,"Empleada domestica",R.drawable.personal1,"6441238574"))
+        listaPersonal.add(Personal("Rocío","Santos",29,"Cocinera",R.drawable.personal5,"6441189652"))
     }
 
     private class AdaptadorPersonal:BaseAdapter{
