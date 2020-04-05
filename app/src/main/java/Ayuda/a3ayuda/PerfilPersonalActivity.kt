@@ -1,11 +1,11 @@
 package Ayuda.a3ayuda
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_perfil_personal.*
 import kotlinx.android.synthetic.main.activity_perfil_personal.tv_Edad
 import kotlinx.android.synthetic.main.activity_perfil_personal.tv_Nombre
-import kotlinx.android.synthetic.main.personal.*
 
 class PerfilPersonalActivity : AppCompatActivity() {
 
@@ -18,6 +18,10 @@ class PerfilPersonalActivity : AppCompatActivity() {
             tv_Nombre.setText(bundle.getString("nombre"))
             tv_Edad.setText(bundle.getInt("edad").toString())
             tv_telefono.setText(bundle.getString("telefono"))
+        }
+        btn_AccederPersonal.setOnClickListener {
+            var intent = Intent(this, UbicacionActivity::class.java)
+            startActivity(intent)
         }
     }
 }

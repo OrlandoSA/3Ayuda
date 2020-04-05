@@ -14,8 +14,9 @@
         android:layout_margin="30dp"
         android:textColor="@color/negro"
         android:textAlignment="center"
+        android:fontFamily="sans-serif-light"
         android:background="@drawable/marco3"
-        android:textSize="72dp"/>
+        android:textSize="60dp"/>
 
     <ImageView
         android:id="@+id/foto"

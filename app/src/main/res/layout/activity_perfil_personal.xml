@@ -22,36 +22,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="10dp"
         android:background="@drawable/marco_blanco"
         android:fontFamily="sans-serif-light"
         android:gravity="center"
         android:paddingVertical="15dp"
         android:text="Nombre"
-        android:textSize="28sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tv_Edad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="10dp"
         android:background="@drawable/marco_blanco"
         android:fontFamily="sans-serif-light"
         android:gravity="center"
         android:paddingVertical="15dp"
         android:text="Años"
-        android:textSize="28sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tv_telefono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="10dp"
         android:background="@drawable/marco_blanco"
         android:fontFamily="sans-serif-light"
         android:gravity="center"
         android:paddingVertical="15dp"
         android:text="Teléfono"
-        android:textSize="28sp" />
+        android:textSize="30sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,7 +63,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btn_AccederRegistro"
+            android:id="@+id/btn_AccederPersonal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

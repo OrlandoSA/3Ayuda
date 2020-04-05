@@ -9,4 +9,8 @@
     <string name="perfil">PERFIL</string>
     <string name="personal">Personal de Servicio</string>
     <string name="bienvenida">BIENVENIDO</string>
+    <string name="colonia_hint"><font size="24">Colonia</font></string>
+    <string name="calle_hint"><font size="24">Calle</font></string>
+    <string name="casa_hint"><font size="24"># Casa</font></string>
+    <string name="ubicacion">UBICACIÓN</string>
 </resources>
