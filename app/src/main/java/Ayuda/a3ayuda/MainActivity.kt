@@ -1,9 +1,10 @@
 package Ayuda.a3ayuda
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,9 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_AccederInicio.setOnClickListener {
-            var intent = Intent(this, RegistroActivity::class.java)
+            var intent = Intent(this, RegistroGoogle::class.java)
             startActivity(intent)
         }
-    }
 
-}
+}}
