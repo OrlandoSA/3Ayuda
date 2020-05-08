@@ -20,7 +20,7 @@ class PerfilPersonalActivity : AppCompatActivity() {
             tv_telefono.setText(bundle.getString("telefono"))
         }
         btn_AccederPersonal.setOnClickListener {
-            var intent = Intent(this, UbicacionActivity::class.java)
+            var intent = Intent(this, UbicacionGPSActivity::class.java)
             startActivity(intent)
         }
 

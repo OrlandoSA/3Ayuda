@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azulclaro"
-    android:fillViewport="true"
-    tools:context=".SugerenciasActivity">
+    tools:context=".UbicacionGPSActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,32 +14,29 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:background="@drawable/marco3"
-            android:paddingVertical="10dp"
-            android:text="@string/comentarios"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/ubicacion"
             android:textAlignment="center"
             android:textColor="@color/negro"
-            android:textSize="25dp" />
-
+            android:textSize="50dp" />
 
         <EditText
-            android:id="@+id/tv_Mensaje"
+            android:id="@+id/tv_direccion"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="241dp"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="5dp"
-            android:background="@drawable/marco_blanco_grande"
+            android:background="@drawable/marcocuadrado"
             android:fontFamily="sans-serif-light"
             android:gravity="center"
-            android:hint="ESCRIBA AQUÍ SU MENSAJE"
-            android:lines="10"
-            android:maxLines="15"
-            android:minLines="6"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="30dp"
-            android:scrollbars="vertical"
+            android:hint="@string/colonia_hint"
+            android:paddingVertical="15dp"
+            android:textColorHint="@color/negro"
             android:textSize="30sp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,7 +45,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_Enviar"
+                android:id="@+id/btn_Acceder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -58,7 +54,7 @@
                 android:fontFamily="sans-serif-light"
                 android:paddingHorizontal="50dp"
                 android:paddingVertical="10dp"
-                android:text="@string/enviar"
+                android:text="@string/boton"
                 android:textSize="45dp" />
         </LinearLayout>
     </LinearLayout>
