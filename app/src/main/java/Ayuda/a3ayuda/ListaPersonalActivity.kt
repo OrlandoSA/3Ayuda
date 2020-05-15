@@ -1,5 +1,6 @@
 package Ayuda.a3ayuda
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +9,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_lista_personal.*
 import kotlinx.android.synthetic.main.personal.view.*
 
@@ -40,7 +46,8 @@ class ListaPersonalActivity : AppCompatActivity() {
                     return@addSnapshotListener
                 }
                 for (doc in value!!) {
-                    val persona= doc.toObject(Personal::class.java)
+
+                    val persona= Personal(doc.id, Integer.parseInt(doc.data.get("edad").toString()), doc.data.get("nombre").toString(), doc.data.get("servicios").toString(), "perfiles/${doc.id}.jpg")
                     if (!listaPersonal.contains(persona)) {
                         listaPersonal.add(persona)
                     }
@@ -51,11 +58,12 @@ class ListaPersonalActivity : AppCompatActivity() {
 
     private class AdaptadorPersonal:BaseAdapter{
         var personal=ArrayList<Personal>()
-        var contexto:Context?=null
+        var contexto : Context
 
         constructor(contexto:Context,personal:ArrayList<Personal>){
             this.contexto=contexto
             this.personal=personal
+
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -66,7 +74,18 @@ class ListaPersonalActivity : AppCompatActivity() {
             vista.tv_Nombre.setText(persona.nombre)
             vista.tv_Edad.setText(persona.edad.toString())
             vista.tv_Servicio.setText(persona.servicio)
-            //Picasso.get().load(persona.imagen).into(vista.iv_imagen)
+
+            if(persona.imagen!="") {
+                var imageref = FirebaseStorage.getInstance().getReference().child(persona.imagen)
+                imageref.downloadUrl.addOnSuccessListener {Uri->
+                    val imageURL = Uri.toString()
+                    Glide.with(contexto)
+                        .load(imageURL)
+                        .into(vista.iv_imagen)
+                }
+            }
+            else
+                Picasso.get().load("https://www.ecured.cu/images/thumb/7/7b/Thalia.jpg/260px-Thalia.jpg").into(vista.iv_imagen)
 
             vista.setOnClickListener{
                 var intent = Intent(contexto, PerfilPersonalActivity::class.java)
@@ -78,6 +97,7 @@ class ListaPersonalActivity : AppCompatActivity() {
 
             return vista
         }
+
 
         override fun getItem(position: Int): Any {
             return personal[position]
