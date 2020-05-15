@@ -12,4 +12,5 @@
     <color name="negro">#000</color>
     <color name="cancelar">#ec2124</color>
     <color name="grisclaro">#EAEAEA</color>
+    <color name="verdeclaro">#FFBFFAF4</color>
 </resources>
