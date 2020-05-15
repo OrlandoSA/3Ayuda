@@ -22,7 +22,7 @@ class ListaPersonalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_personal)
-        actualizarListaPersonal()
+
         cargarPersonal()
     }
 
@@ -33,7 +33,6 @@ class ListaPersonalActivity : AppCompatActivity() {
 
 
     fun cargarPersonal(){
-
         db.collection("perfiles")
             .addSnapshotListener { value, e ->
                 if (e != null) {
