@@ -15,8 +15,8 @@ class MensajeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_msg)
-        var mostrarMensaje= getIntent().getStringExtra("mensaje")
-        var siguienteVentana= getIntent().getStringExtra("siguiente")
+        var mostrarMensaje= intent.getStringExtra("mensaje")
+        var siguienteVentana= intent.getStringExtra("siguiente")
         mensaje_texto.text=mostrarMensaje
 
         btn_Aceptar.setOnClickListener {

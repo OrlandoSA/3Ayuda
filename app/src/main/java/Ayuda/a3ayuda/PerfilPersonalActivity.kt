@@ -15,9 +15,9 @@ class PerfilPersonalActivity : AppCompatActivity() {
         var bundle=intent.extras
         if(bundle!=null){
             iv_imagenPersonal.setImageResource(bundle.getInt("imagen"))
-            tv_Nombre.setText(bundle.getString("nombre"))
-            tv_Edad.setText(bundle.getInt("edad").toString())
-            tv_telefono.setText(bundle.getString("telefono"))
+            tv_Nombre.text = bundle.getString("nombre")
+            tv_Edad.text = bundle.getInt("edad").toString()
+            tv_telefono.text = bundle.getString("telefono")
         }
         btn_AccederPersonal.setOnClickListener {
             var intent = Intent(this, UbicacionGPSActivity::class.java)

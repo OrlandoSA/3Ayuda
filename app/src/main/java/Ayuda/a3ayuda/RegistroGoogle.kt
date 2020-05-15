@@ -38,7 +38,7 @@ class RegistroGoogle : AppCompatActivity() {
                 .build()
 
         // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
         sign_in_button.setOnClickListener{
             val signInIntent = mGoogleSignInClient.signInIntent

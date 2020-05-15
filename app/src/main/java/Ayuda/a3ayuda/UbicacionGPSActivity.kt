@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_ubicacion.*
 
 class UbicacionGPSActivity : AppCompatActivity() {
 
-    val REQUEST_CODE_LOCATION_PERMISSION=1;
+    val REQUEST_CODE_LOCATION_PERMISSION=1
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: LocationCallback
@@ -56,9 +56,9 @@ class UbicacionGPSActivity : AppCompatActivity() {
 
     fun obtenerUbicacionActual(){
         var solicitudUbicacion: LocationRequest = LocationRequest()
-        solicitudUbicacion.setInterval(10000)
-        solicitudUbicacion.setFastestInterval(3000)
-        solicitudUbicacion.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+        solicitudUbicacion.interval = 10000
+        solicitudUbicacion.fastestInterval = 3000
+        solicitudUbicacion.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult?) {
                 super.onLocationResult(locationResult)

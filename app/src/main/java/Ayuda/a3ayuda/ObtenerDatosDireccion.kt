@@ -16,10 +16,6 @@ class ObtenerDatosDireccion : IntentService("ObtenerDatosDireccion") {
 
     lateinit var resultReceiver: ResultReceiver
 
-    override fun onCreate() {
-        super.onCreate()
-    }
-
     override fun onHandleIntent(intent: Intent?) {
 
         if(intent!=null){
