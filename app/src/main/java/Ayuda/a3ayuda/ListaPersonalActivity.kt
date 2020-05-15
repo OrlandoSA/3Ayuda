@@ -2,34 +2,52 @@ package Ayuda.a3ayuda
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_lista_personal.*
 import kotlinx.android.synthetic.main.personal.view.*
+
 
 class ListaPersonalActivity : AppCompatActivity() {
 
     var listaPersonal=ArrayList<Personal>()
+    var db= FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_personal)
+        actualizarListaPersonal()
         cargarPersonal()
+    }
+
+    fun actualizarListaPersonal(){
         var adaptador=AdaptadorPersonal(this,listaPersonal)
         listview.adapter=adaptador
     }
 
+
     fun cargarPersonal(){
-        listaPersonal.add(Personal("Hitomi","Flores",34,"Cuidados",R.drawable.personal3,"6444637485"))
-        listaPersonal.add(Personal("Celina","Acosta",42,"Pintura",R.drawable.personal6,"6442857496"))
-        listaPersonal.add(Personal("Salvador","Villanueva",26,"Fontanero",R.drawable.personal2,"6441748596"))
-        listaPersonal.add(Personal("Alfredo","Pérez",41,"Arreglos generales",R.drawable.personal4,"6441235478"))
-        listaPersonal.add(Personal("Rosalía","López",50,"Empleada domestica",R.drawable.personal1,"6441238574"))
-        listaPersonal.add(Personal("Rocío","Santos",29,"Cocinera",R.drawable.personal5,"6441189652"))
+
+        db.collection("perfiles")
+            .addSnapshotListener { value, e ->
+                if (e != null) {
+                    Log.w("Error", "Listen failed.", e)
+                    return@addSnapshotListener
+                }
+                for (doc in value!!) {
+                    val persona= doc.toObject(Personal::class.java)
+                    if (!listaPersonal.contains(persona)) {
+                        listaPersonal.add(persona)
+                    }
+                }
+                actualizarListaPersonal()
+            }
     }
 
     private class AdaptadorPersonal:BaseAdapter{
@@ -46,17 +64,16 @@ class ListaPersonalActivity : AppCompatActivity() {
             var inflador= LayoutInflater.from(contexto)
             var vista=inflador.inflate(R.layout.personal,null)
 
-            vista.tv_Nombre.setText(persona.nombre+" "+persona.apellido)
+            vista.tv_Nombre.setText(persona.nombre)
             vista.tv_Edad.setText(persona.edad.toString())
             vista.tv_Servicio.setText(persona.servicio)
-            vista.iv_imagen.setImageResource(persona.imagen)
+            //Picasso.get().load(persona.imagen).into(vista.iv_imagen)
 
             vista.setOnClickListener{
                 var intent = Intent(contexto, PerfilPersonalActivity::class.java)
-                intent.putExtra("imagen", persona.imagen)
-                intent.putExtra("nombre", persona.nombre+" "+persona.apellido)
+                //intent.putExtra("imagen", persona.imagen)
+                intent.putExtra("nombre", persona.nombre)
                 intent.putExtra("edad", persona.edad)
-                intent.putExtra("telefono",persona.telefono)
                 contexto!!.startActivity(intent)
             }
 

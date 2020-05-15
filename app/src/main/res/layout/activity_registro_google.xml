@@ -28,7 +28,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="35dp"
-                android:background="@drawable/marco"
                 android:fontFamily="sans-serif-light"
                 android:paddingHorizontal="50dp"
                 android:paddingVertical="10dp"

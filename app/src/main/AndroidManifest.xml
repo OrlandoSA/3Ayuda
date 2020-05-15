@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".UbicacionGPSActivity">
-
         </activity>
         <activity android:name=".RegistroGoogle" />
         <activity android:name=".SugerenciasActivity" />
@@ -21,7 +20,8 @@
         <activity android:name=".UbicacionActivity" />
         <activity android:name=".PerfilPersonalActivity" />
         <activity android:name=".BienvenidaActivity" />
-        <activity android:name=".ListaPersonalActivity" />
+        <activity android:name=".ListaPersonalActivity">
+        </activity>
         <activity android:name=".PerfilActivity" />
         <activity android:name=".RegistroActivity" />
         <activity android:name=".MenuActivity" />

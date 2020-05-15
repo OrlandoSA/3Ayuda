@@ -74,8 +74,6 @@ class RegistroGoogle : AppCompatActivity() {
 
         if(account != null){
             val intent = Intent(this, PerfilActivity::class.java)
-            intent.putExtra("name", account.displayName)
-            intent.putExtra("foto", account.photoUrl)
             startActivity(intent)
         }
 
