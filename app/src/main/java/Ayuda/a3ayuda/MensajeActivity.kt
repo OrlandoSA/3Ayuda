@@ -27,6 +27,9 @@ class MensajeActivity : AppCompatActivity() {
             }else if(siguienteVentana.equals(Constantes.VENTANA_LISTA_PERSONAL)){
                 var intent = Intent(this, ListaPersonalActivity::class.java)
                 startActivity(intent)
+            }else if(siguienteVentana.equals(Constantes.VENTANA_PERFIL_ADULTO)){
+                var intent = Intent(this, PerfilActivity::class.java)
+                startActivity(intent)
             }
         }
     }

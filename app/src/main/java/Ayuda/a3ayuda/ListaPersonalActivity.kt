@@ -81,19 +81,19 @@ class ListaPersonalActivity : AppCompatActivity() {
                 equis.downloadUrl.addOnSuccessListener {Uri->
                     val imageURL = Uri.toString()
                     Glide.with(contexto)
-                        .load("https://www.ecured.cu/images/thumb/7/7b/Thalia.jpg/260px-Thalia.jpg")
+                        .load(imageURL)
                         .into(vista.iv_imagen)
                 }
-
             }
             else
                 Picasso.get().load("https://www.ecured.cu/images/thumb/7/7b/Thalia.jpg/260px-Thalia.jpg").into(vista.iv_imagen)
 
             vista.setOnClickListener{
                 var intent = Intent(contexto, PerfilPersonalActivity::class.java)
-                //intent.putExtra("imagen", persona.imagen)
+                intent.putExtra("imagen", persona.imagen)
                 intent.putExtra("nombre", persona.nombre)
                 intent.putExtra("edad", persona.edad)
+                intent.putExtra("idServicio", persona.id)
                 contexto.startActivity(intent)
             }
 

@@ -56,18 +56,6 @@
             android:text="Años"
             android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/tv_telefono"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="5dp"
-            android:background="@drawable/marco_blanco"
-            android:fontFamily="sans-serif-light"
-            android:gravity="center"
-            android:paddingVertical="15dp"
-            android:text="Teléfono"
-            android:textSize="30sp" />
 
         <LinearLayout
             android:layout_width="match_parent"

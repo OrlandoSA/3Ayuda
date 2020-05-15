@@ -55,12 +55,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/marco"
+                android:fontFamily="sans-serif-light"
+                android:paddingHorizontal="60dp"
+                android:paddingVertical="10dp"
+                android:text="@string/boton"
+                android:textSize="45dp" />
+
+            <Button
+                android:id="@+id/btn_VerPendientes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/marco"
                 android:fontFamily="sans-serif-light"
-                android:paddingHorizontal="50dp"
+                android:paddingHorizontal="30dp"
                 android:paddingVertical="10dp"
-                android:text="@string/boton"
+                android:text="@string/serviciospendientes"
                 android:textSize="45dp" />
         </LinearLayout>
     </LinearLayout>

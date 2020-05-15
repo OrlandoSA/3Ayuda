@@ -14,7 +14,7 @@ class UbicacionActivity : AppCompatActivity() {
         btn_Acceder.setOnClickListener {
             var intent = Intent(this, MensajeActivity::class.java)
             intent.putExtra("mensaje","UBICACIÓN ENVIADA")
-            intent.putExtra("siguiente", Constantes.VENTANA_BUZON_SUGERENCIAS)
+            intent.putExtra("siguiente", Constantes.VENTANA_PERFIL_ADULTO)
             startActivity(intent)
         }
     }

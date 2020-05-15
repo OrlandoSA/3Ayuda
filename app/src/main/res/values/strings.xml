@@ -15,5 +15,6 @@
     <string name="ubicacion">UBICACIÓN</string>
     <string name="aceptar">ACEPTAR</string>
     <string name="comentarios">OPINIÓN DEL SERVICIO</string>
+    <string name="serviciospendientes">PENDIENTES</string>
     <string name="enviar">ENVIAR</string>
 </resources>

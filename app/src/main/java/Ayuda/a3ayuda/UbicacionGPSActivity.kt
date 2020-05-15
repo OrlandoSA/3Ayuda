@@ -12,8 +12,12 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.location.*
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_ubicacion.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class UbicacionGPSActivity : AppCompatActivity() {
 
@@ -22,19 +26,32 @@ class UbicacionGPSActivity : AppCompatActivity() {
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: LocationCallback
     var contexto=this
+    var latitud : Double =0.00
+    var longitud : Double =0.00
     lateinit var direccion : TextView
     private lateinit var resultReceiver : ResultReceiver
-
+    val db = FirebaseFirestore.getInstance()
     @RequiresApi(Build.VERSION_CODES.M) //GPS funciona apartir de android 19 creo :,D
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ubicacion_g_p_s)
 
         btn_Acceder.setOnClickListener {
-            var intent = Intent(this, MensajeActivity::class.java)
-            intent.putExtra("mensaje","UBICACIÓN ENVIADA")
-            intent.putExtra("siguiente", Constantes.VENTANA_BUZON_SUGERENCIAS)
-            startActivity(intent)
+
+            if (direccion.text!="") {
+                val sdf = SimpleDateFormat("dd/MM/yyyy")
+                val currentDate = sdf.format(Date())
+                val sdf2 = SimpleDateFormat("hh:mm:ss dd/MM/yyyy")
+                val fechaconhora= sdf2.format(Date())
+                val acct = GoogleSignIn.getLastSignedInAccount(this)
+                var bundle=intent.extras
+                var trabajo = Trabajo("abierto",currentDate, acct?.email!!,bundle?.getString("idServicio")!!,acct.id+fechaconhora,"geo:0,0?q=$latitud, $longitud",acct.givenName + " " + acct.familyName)
+                db.collection("trabajos").add(trabajo)
+                var intent = Intent(this, MensajeActivity::class.java)
+                intent.putExtra("mensaje","UBICACIÓN ENVIADA")
+                intent.putExtra("siguiente", Constantes.VENTANA_PERFIL_ADULTO)
+                startActivity(intent)
+            }
         }
 
         resultReceiver= RecibidorDeDireccionResultante(Handler())
@@ -65,8 +82,8 @@ class UbicacionGPSActivity : AppCompatActivity() {
                 LocationServices.getFusedLocationProviderClient(contexto).removeLocationUpdates(this)
                 if(locationResult!=null && locationResult.locations.size>0){
                     var latestLocationIndex = locationResult.locations.size-1
-                    var latitud= locationResult.locations.get(latestLocationIndex).latitude
-                    var longitud =locationResult.locations.get(latestLocationIndex).longitude
+                    latitud= locationResult.locations.get(latestLocationIndex).latitude
+                    longitud =locationResult.locations.get(latestLocationIndex).longitude
                     //colonia.text="Latitud: $latitud y Longitud : $longitud"
 
                    var loc: Location = Location("providerNA")

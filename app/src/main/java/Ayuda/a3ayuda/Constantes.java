@@ -4,6 +4,7 @@ public class Constantes {
 
     public static String VENTANA_BUZON_SUGERENCIAS="1";
     public static String VENTANA_LISTA_PERSONAL="2";
+    public static String VENTANA_PERFIL_ADULTO="3";
     public static String PACKAGE_NAME="Ayuda.a3ayuda";
     public static String RESULT_DATA_KEY=".RESULT_DATA_KEY";
     public static String RECEIVER=PACKAGE_NAME+".RECEIVER";

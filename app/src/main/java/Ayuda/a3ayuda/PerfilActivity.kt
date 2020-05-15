@@ -28,6 +28,11 @@ class PerfilActivity : AppCompatActivity() {
             var intent = Intent(this, ListaPersonalActivity::class.java)
             startActivity(intent)
         }
+
+        btn_VerPendientes.setOnClickListener{
+            var intent = Intent(this, PendientesActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
