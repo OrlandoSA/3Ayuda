@@ -3,7 +3,7 @@
     android:id="@+id/layout_fondo"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/marcocuadrado"
+    android:background="@drawable/marcocuadrado2"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="Dibujar manga"
+            android:text="Servicio"
             android:textSize="30sp"
             android:textStyle="bold" />
     </RelativeLayout>

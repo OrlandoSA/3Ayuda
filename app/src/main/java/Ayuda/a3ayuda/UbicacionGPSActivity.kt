@@ -1,9 +1,11 @@
 package Ayuda.a3ayuda
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
+import android.location.LocationManager
 import android.os.*
 import android.widget.TextView
 import android.widget.Toast
@@ -39,7 +41,7 @@ class UbicacionGPSActivity : AppCompatActivity() {
 
         btn_Acceder.setOnClickListener {
 
-            if (!direccion.text.isEmpty()) {
+            if (!direccion.text.isEmpty()&&latitud!=0.00&&longitud!=0.00) {
                 val sdf = SimpleDateFormat("dd/MM/yyyy")
                 val currentDate = sdf.format(Date())
                 val sdf2 = SimpleDateFormat("hh:mm:ss dd/MM/yyyy")
@@ -56,8 +58,15 @@ class UbicacionGPSActivity : AppCompatActivity() {
                 startActivity(intent)
             }else
             {
-                Toast.makeText(this,"No se pudo obtener la ubicación.",Toast.LENGTH_SHORT).show()
-                startActivity(Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                val manager =contexto.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+                if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+                    Toast.makeText(this,"Para obtener la ubicación debe activar el GPS.",Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+                }
+                else {
+                    Toast.makeText(this,"Ubicación está vacía. Vuelva a intentarlo.",Toast.LENGTH_SHORT).show()
+                    iniciarChecarUbicacion()
+                }
             }
         }
 
