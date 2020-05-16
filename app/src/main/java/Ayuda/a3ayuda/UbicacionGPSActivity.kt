@@ -46,8 +46,10 @@ class UbicacionGPSActivity : AppCompatActivity() {
                 val fechaconhora= sdf2.format(Date())
                 val acct = GoogleSignIn.getLastSignedInAccount(this)
                 var bundle=intent.extras
-                var trabajo = Trabajo("abierto",currentDate, acct?.email!!,bundle?.getString("idServicio")!!,acct.id+fechaconhora,"geo:0,0?q=$latitud, $longitud",acct.givenName + " " + acct.familyName)
-                db.collection("trabajos").add(trabajo)
+                var idRef=db.collection("trabajos").document()
+                var id=idRef.id
+                var trabajo = Trabajo("abierto",currentDate, acct?.email!!,bundle?.getString("idServicio")!!,id,"geo:0,0?q=$latitud, $longitud",acct.givenName + " " + acct.familyName)
+                idRef.set(trabajo)
                 var intent = Intent(this, MensajeActivity::class.java)
                 intent.putExtra("mensaje","EL TRABAJADOR HA SIDO NOTIFICADO")
                 intent.putExtra("siguiente", Constantes.VENTANA_PERFIL_ADULTO)
