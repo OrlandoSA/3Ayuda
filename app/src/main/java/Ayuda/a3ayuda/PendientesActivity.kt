@@ -121,8 +121,4 @@ class PendientesActivity : AppCompatActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        moveTaskToBack(true)
-    }
-
 }

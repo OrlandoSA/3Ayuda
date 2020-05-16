@@ -10,6 +10,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import kotlinx.android.synthetic.main.activity_registro.*
+import kotlinx.android.synthetic.main.activity_registro_google.*
 
 
 class RegistroGoogle : AppCompatActivity() {
@@ -40,7 +41,7 @@ class RegistroGoogle : AppCompatActivity() {
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        sign_in_button.setOnClickListener{
+        btn_AccederBienvenida.setOnClickListener{
             val signInIntent = mGoogleSignInClient.signInIntent
             startActivityForResult(signInIntent, RC_SIGN_IN)
         }
@@ -88,4 +89,5 @@ class RegistroGoogle : AppCompatActivity() {
         val account = GoogleSignIn.getLastSignedInAccount(this)
         updateUI(account)
     }
+
 }

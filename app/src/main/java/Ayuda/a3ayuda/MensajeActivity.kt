@@ -1,11 +1,9 @@
 package Ayuda.a3ayuda
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_msg.*
-import kotlin.reflect.KClass
 
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
@@ -32,5 +30,10 @@ class MensajeActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+    }
+
+    override fun onBackPressed() {
+        this.startActivity(Intent(this, PerfilActivity::class.java))
+        return
     }
 }

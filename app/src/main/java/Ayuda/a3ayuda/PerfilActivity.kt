@@ -35,5 +35,7 @@ class PerfilActivity : AppCompatActivity() {
         }
     }
 
-
+    override fun onBackPressed() {
+        moveTaskToBack(true)
+    }
 }

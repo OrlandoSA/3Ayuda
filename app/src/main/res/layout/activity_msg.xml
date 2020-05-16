@@ -31,7 +31,7 @@
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="40dp"
                 android:text="UBICACIÓN ENVIADA"
-                android:textSize="50dp" />
+                android:textSize="40dp" />
 
         </LinearLayout>
 

@@ -54,7 +54,7 @@ class ChatActivity : AppCompatActivity() {
     private fun enviarMensaje() {
         if (!et_mensaje.text.isBlank()) {
             val sdf = SimpleDateFormat("hh:mm:ss a dd/M/yyyy")
-            val currentDate = sdf.format(Date())
+            val currentDate = sdf.format(Calendar.getInstance().time)
             val sender = GoogleSignIn.getLastSignedInAccount(this)?.displayName
             val mensaje = Mensaje(currentDate, sender!!, idTrabajo!!, et_mensaje.text.toString())
 

@@ -5,19 +5,19 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.*
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.location.*
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_ubicacion.*
+import kotlinx.android.synthetic.main.activity_ubicacion.btn_Acceder
+import kotlinx.android.synthetic.main.activity_ubicacion_g_p_s.*
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 class UbicacionGPSActivity : AppCompatActivity() {
 
@@ -35,10 +35,11 @@ class UbicacionGPSActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ubicacion_g_p_s)
+        direccion = tv_direccion
 
         btn_Acceder.setOnClickListener {
 
-            if (direccion.text!="") {
+            if (!direccion.text.isEmpty()) {
                 val sdf = SimpleDateFormat("dd/MM/yyyy")
                 val currentDate = sdf.format(Date())
                 val sdf2 = SimpleDateFormat("hh:mm:ss dd/MM/yyyy")
@@ -48,12 +49,34 @@ class UbicacionGPSActivity : AppCompatActivity() {
                 var trabajo = Trabajo("abierto",currentDate, acct?.email!!,bundle?.getString("idServicio")!!,acct.id+fechaconhora,"geo:0,0?q=$latitud, $longitud",acct.givenName + " " + acct.familyName)
                 db.collection("trabajos").add(trabajo)
                 var intent = Intent(this, MensajeActivity::class.java)
-                intent.putExtra("mensaje","UBICACIÓN ENVIADA")
+                intent.putExtra("mensaje","EL TRABAJADOR HA SIDO NOTIFICADO")
                 intent.putExtra("siguiente", Constantes.VENTANA_PERFIL_ADULTO)
                 startActivity(intent)
+            }else
+            {
+                Toast.makeText(this,"No se pudo obtener la ubicación.",Toast.LENGTH_SHORT).show()
+                startActivity(Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
             }
         }
 
+        btn_Cancelar.setOnClickListener{
+            var intent= Intent(this, ListaPersonalActivity::class.java)
+            startActivity(intent)
+        }
+
+        iniciarChecarUbicacion()
+
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    override fun onResume() {
+        super.onResume()
+        iniciarChecarUbicacion()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun iniciarChecarUbicacion()
+    {
         resultReceiver= RecibidorDeDireccionResultante(Handler())
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
@@ -67,8 +90,6 @@ class UbicacionGPSActivity : AppCompatActivity() {
             //si si tiene permisos se procede a guardar
             obtenerUbicacionActual()
         }
-
-
     }
 
     fun obtenerUbicacionActual(){

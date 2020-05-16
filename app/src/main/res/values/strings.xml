@@ -17,4 +17,6 @@
     <string name="comentarios">OPINIÓN DEL SERVICIO</string>
     <string name="serviciospendientes">PENDIENTES</string>
     <string name="enviar">ENVIAR</string>
+    <string name="contratar">CONTRATAR</string>
+    <string name="pendientes">Pendientes</string>
 </resources>

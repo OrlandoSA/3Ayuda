@@ -17,23 +17,19 @@
         <activity android:name=".PendientesActivity"></activity>
         <activity android:name=".ChatActivity" />
         <activity android:name=".UbicacionGPSActivity" />
-        <activity android:name=".RegistroGoogle" />
-        <activity android:name=".SugerenciasActivity" />
-        <activity android:name=".MensajeActivity" />
-        <activity android:name=".UbicacionActivity" />
-        <activity android:name=".PerfilPersonalActivity" />
-        <activity android:name=".BienvenidaActivity" />
-        <activity android:name=".ListaPersonalActivity" />
-        <activity android:name=".PerfilActivity" />
-        <activity android:name=".RegistroActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".RegistroGoogle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SugerenciasActivity" />
+        <activity android:name=".MensajeActivity" />
+        <activity android:name=".PerfilPersonalActivity" />
+        <activity android:name=".ListaPersonalActivity" />
+        <activity android:name=".PerfilActivity" />
+        <activity android:name=".MenuActivity" />
 
         <service android:name=".ObtenerDatosDireccion" />
     </application>

@@ -73,8 +73,8 @@
                 android:fontFamily="sans-serif-light"
                 android:paddingHorizontal="60dp"
                 android:paddingVertical="10dp"
-                android:text="@string/boton"
-                android:textSize="43dp" />
+                android:text="@string/contratar"
+                android:textSize="40dp" />
 
             <Button
                 android:id="@+id/btn_Cancelar"
@@ -83,11 +83,11 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/marcocancelar"
                 android:fontFamily="sans-serif-light"
-                android:paddingHorizontal="50dp"
+                android:paddingHorizontal="80dp"
                 android:paddingVertical="10dp"
                 android:text="Cancelar"
                 android:textColor="@color/blanco"
-                android:textSize="43dp" />
+                android:textSize="40dp" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
